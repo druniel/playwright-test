@@ -1,4 +1,10 @@
 def test_api_get(playwright):
     request = playwright.request.new_context()
-    response = request.get("https://jsonplaceholder.typicode.com/posts/1")
+    response = request.get("https://jsonplaceholder.typicode.com/posts/1", headers={"Accept": "application/json"})
     assert response.status == 200
+    json_data = response.json()
+    print(json_data)
+    assert json_data["id"] == 1
+    
+    request.dispose()
+    print("Test completed successfully.")

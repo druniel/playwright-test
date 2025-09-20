@@ -9,6 +9,7 @@ def test_api_get(playwright):
     assert response.status == 200
     json_data = response.json()
     print(json_data)
+    assert json_data["data"][0]["name"] == "Alice"
     
     request.dispose()
     print("Test completed successfully.")

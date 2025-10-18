@@ -1,6 +1,7 @@
 from playwright.sync_api import Page, expect
 import pytest
 
+# the test will run until there are un + pass
 @pytest.mark.parametrize(
     "username,password",
     [

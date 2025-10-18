@@ -2,7 +2,7 @@ from playwright.sync_api import Page, expect
 from pages.login_page import LoginPage
 from pages.homepage import HomePage
 
-
+# simple login test, which utilizes the classes with individual functions in pages directory, so if anything needs to be changed, it will have to be changed only in one place
 def test_example(page: Page) -> None:
     login_page = LoginPage(page)
     home_page = HomePage(page)

@@ -1,6 +1,7 @@
 import re
 from playwright.sync_api import expect
 
+# simple google search test
 def test_google_search(page):
     page.wait_for_timeout(2000)
     page.goto("https://www.google.com/ncr")

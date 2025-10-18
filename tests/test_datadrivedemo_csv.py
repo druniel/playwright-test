@@ -10,6 +10,7 @@ def get_csv_data():
             data.append(row)
     return data
 
+# the test will run until there are un + pass
 @pytest.mark.parametrize("username,password", get_csv_data())
 def test_example(page: Page, username, password) -> None:
     page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")

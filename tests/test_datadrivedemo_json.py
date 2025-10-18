@@ -7,6 +7,7 @@ def get_json_data() -> list:
         data = json.load(file)
     return [(item['username'], item['password']) for item in data]
 
+# the test will run until there are un + pass
 @pytest.mark.parametrize("username,password", get_json_data())
 def test_example(page: Page, username, password) -> None:
     page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")

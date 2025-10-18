@@ -1,3 +1,4 @@
+# testing public api with x-api-key (but it actually doesnt require authorization), get
 def test_api_get(playwright):
     request = playwright.request.new_context(
         extra_http_headers={

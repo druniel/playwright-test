@@ -1,6 +1,7 @@
 import re
 from playwright.sync_api import Page, expect
 
+# simple login test
 def test_example(page: Page) -> None:
     page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
     page.get_by_role("textbox", name="Username").fill("Admin")

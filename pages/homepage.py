@@ -1,5 +1,6 @@
 from playwright.sync_api import Page, expect
 
+# operations that can be executed with homepage elements
 class HomePage:
     def __init__(self, page:Page):
         self.page = page

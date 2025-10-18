@@ -1,3 +1,5 @@
+# central pytest-playwright config file for batch configurations and test behavior modification (base url, actions before of after tests, fixtures, hooks etc.)
+
 #import pytest
 #from pytest import FixtureRequest
 #from playwright.sync_api import sync_playwright

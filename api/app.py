@@ -5,9 +5,10 @@ from typing import Optional
 
 app = FastAPI()
 
-# Očekávaný klíč lze nastavit přes env var; pokud není, použije se default
+# if not expected key, default will be used
 EXPECTED_API_KEY = os.getenv("EXPECTED_API_KEY", "reqres-free-v1")
 
+# how data should look like
 class Item(BaseModel):
     id: int
     name: str
@@ -16,7 +17,7 @@ class Item(BaseModel):
 def get_users(x_api_key: Optional[str] = Header(None)):
     if x_api_key != EXPECTED_API_KEY:
         raise HTTPException(status_code=401, detail="Unauthorized - invalid x-api-key")
-    # vrátíme demo data
+    # returns expected data
     return {"page": 1, "data": [{"id": 1, "name": "Alice"}, {"id": 2, "name": "Bob"}]}
 
 @app.post("/items", status_code=201)
